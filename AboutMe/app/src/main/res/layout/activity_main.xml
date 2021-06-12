@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="myName"
+            type="com.example.aboutme.MyName" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            app:fontFamily="@font/roboto"
+            android:text="@={myName.name}"
+            style="@style/text_view_style" />
+
+        <ImageView
+            android:id="@+id/star_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_view_margin_top"
+            app:srcCompat="@android:drawable/btn_star_big_on"
+            android:contentDescription="@string/yellow_star_on" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_gravity="center"
+            android:inputType="textPersonName"
+            android:gravity="center"
+            android:hint="@string/enter_nickname" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nickname_done_button"
+            style="@style/text_view_style"
+            android:padding="10dp"
+            android:text="@string/enter_nickname" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/nickname_text_view"
+            style="@style/text_view_style"
+            android:text="@={myName.nickName}"
+            android:visibility="gone" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/text_view_margin_top"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/text_view_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bio_text"
+                app:fontFamily="@font/roboto" />
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>
