@@ -17,6 +17,7 @@
 package com.example.android.guesstheword.screens.game
 
 import android.os.Bundle
+import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -51,13 +52,8 @@ class GameFragment : Fragment() {
 
         gameViewModel = ViewModelProvider(this).get(GameViewModel::class.java)
 
-        gameViewModel.score.observe(this, Observer { newScore ->
-            binding.scoreText.text = newScore.toString()
-        })
-
-        gameViewModel.word.observe(this, Observer { newWord ->
-            binding.wordText.text = newWord
-        })
+        this.binding.gameViewModel = gameViewModel
+        this.binding.lifecycleOwner = this
 
         gameViewModel.gameFinished.observe(this, Observer { newState ->
             if( newState ) {
@@ -65,17 +61,6 @@ class GameFragment : Fragment() {
                 gameViewModel.onGameFinishedCompleted()
             }
         })
-
-        gameViewModel.time.observe(this, Observer { newTime ->
-            binding.timerText.text = newTime
-        })
-
-        binding.correctButton.setOnClickListener {
-            gameViewModel.onCorrect()
-        }
-        binding.skipButton.setOnClickListener {
-            gameViewModel.onSkip()
-        }
 
         return binding.root
 
