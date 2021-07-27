@@ -29,7 +29,7 @@ data class SleepNight (
     val startTimeMilliSec : Long = System.currentTimeMillis(),
 
     @ColumnInfo(name = "end_time_milli_sec")
-    val endTimeMilliSec : Long = startTimeMilliSec,
+    var endTimeMilliSec : Long = startTimeMilliSec,
 
     @ColumnInfo(name = "sleep_quality")
     var sleepQuality: Int = -1
