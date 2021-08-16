@@ -24,7 +24,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="8dp"
             android:id="@+id/quality_image"
-            tools:srcCompat="@drawable/ic_sleep_5" />
+            tools:srcCompat="@drawable/ic_sleep_5"
+            sleepImage="@{sleepNight}"/>
 
         <TextView
             android:id="@+id/sleep_length"
@@ -36,7 +37,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/quality_image"
             app:layout_constraintTop_toTopOf="@+id/quality_image"
-            tools:text="Wednesday" />
+            tools:text="Wednesday"
+            sleepLengthText="@{sleepNight}"/>
 
         <TextView
             android:id="@+id/quality_string"
@@ -46,7 +48,8 @@
             app:layout_constraintEnd_toEndOf="@+id/sleep_length"
             app:layout_constraintStart_toStartOf="@+id/sleep_length"
             app:layout_constraintTop_toBottomOf="@+id/sleep_length"
-            tools:text="Excellent!!!" />
+            tools:text="Excellent!!!"
+            sleepQualityText="@{sleepNight}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
