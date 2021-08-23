@@ -22,9 +22,9 @@ class GameViewModel : ViewModel() {
     private val time : LiveData<Long>
         get() = _time
 
-    val timeString = Transformations.map( this.time, { time ->
-        DateUtils.formatElapsedTime( time )
-    })
+    val timeString = Transformations.map( this.time) { time ->
+        DateUtils.formatElapsedTime(time)
+    }
 
     // The current word
     private var _word = MutableLiveData<String>()
