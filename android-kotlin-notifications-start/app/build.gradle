@@ -17,6 +17,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 30
@@ -60,4 +62,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-iid:19.0.1'
     implementation 'com.google.firebase:firebase-messaging:19.0.1'
     implementation 'android.arch.work:work-runtime:1.0.1'
+    implementation platform('com.google.firebase:firebase-bom:29.0.3')
 }
